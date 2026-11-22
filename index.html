@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Blocked by 7 AM · Version 1</title>
+<title>Blocked by 7 AM · Version 2</title>
 <meta name="description" content="A student campaign about trash blocking Greenwich Village sidewalks and what 311 does with the reports, using NYC Open Data 311 requests for 2025.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -363,6 +363,39 @@ footer p{margin:0;font-size:10px;line-height:14px;color:var(--text2)}
 </section>
 
 
+<!-- ============ 3a · FIELD CHECK ============ -->
+<section class="screen" id="field-check" aria-labelledby="h-field">
+  <div class="frame"><div class="grid">
+    <div class="title-band">
+      <p class="eyebrow">Field check · 3a</p>
+      <h2 id="h-field">MacDougal St S was the only surveyed site graded C for blocked sidewalk.</h2>
+      <p class="sub">I walked six sites on my own corridor and graded each one. The reports are not just noise.</p>
+    </div>
+    <div class="chart-col">
+      <p class="label" style="margin:0 0 8px;margin-left:calc(28% + 16px)">○ environment (outline) &nbsp; ● sidewalk obstruction (filled)</p>
+      <div class="dots" id="chart-field" role="list" aria-label="Field grades for six sites"></div>
+      <div class="dax"><div></div><div class="ticks"><span style="left:8%">A · clear</span><span style="left:50%">B</span><span style="left:92%">C · blocked</span></div></div>
+      <p class="readout" id="read-field" aria-live="polite">Hover or focus a site for its land-use zone and grades.</p>
+      <p class="source">Source: Hyunseo Kim, DR1 Assignment 3 field survey, University Pl to Washington Sq S corridor, Manhattan CD 2, fall 2026. Land-use zones from NYC Planning Community Profiles, estimated by street character.</p>
+    </div>
+    <div class="notes-col">
+      <div class="note">
+        <h3>What it counts</h3>
+        <p>My own field survey: six sidewalk sites, each graded A (clear) to C (poor) for the environment of the setout area and for sidewalk obstruction.</p>
+      </div>
+      <div class="note">
+        <h3>What it cannot show</h3>
+        <p>Anything beyond one visit per site. Grades are my judgment on a single day and time, so they cannot show change over the week or setout timing. Six sites cannot stand for all of CD 2.</p>
+      </div>
+      <div class="note">
+        <h3>Counting choice</h3>
+        <p>Split grades (A-B, B-C) are plotted halfway between letters. Grades are ordinal, so a dot plot is used, not bars.</p>
+      </div>
+      <figure class="sitephoto" id="sitephoto" hidden><img id="sitephoto-img" alt=""><figcaption id="sitephoto-cap"></figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
 
 <!-- ============ 4 · EVIDENCE II ============ -->
 <section class="screen" id="evidence-two" aria-labelledby="h-e2">
@@ -402,23 +435,95 @@ footer p{margin:0;font-size:10px;line-height:14px;color:var(--text2)}
 </section>
 
 
-
-
-
-
-
-
-<section class="screen" id="coming" style="border-bottom:0">
-  <div class="frame">
-    <p class="eyebrow">The turn · 5 / 6 &nbsp;·&nbsp; The ask · 6 / 6</p>
-    <div class="placeholder"><b>Sketched in storyboard v1, built in v2.</b> The turn ("311 is not the fix, so what do you do?") and the ask (a copyable message asking for a 7 AM setout rule) appear in the storyboard PDF only.</div>
-  </div>
+<!-- ============ 4a · WHAT 311 DOES ============ -->
+<section class="screen" id="outcomes" aria-labelledby="h-out">
+  <div class="frame"><div class="grid">
+    <div class="title-band">
+      <p class="eyebrow">What 311 does · 4a</p>
+      <h2 id="h-out">Only 9 of 1,446 reports ended with DSNY addressing the problem.</h2>
+      <p class="sub">What DSNY recorded for Manhattan CD 2 trash-obstruction requests, 2025.</p>
+    </div>
+    <div class="chart-col">
+      <div class="hbars" id="chart-outcomes" role="list" aria-label="DSNY resolution wording"></div>
+      <div class="axis"><div></div><div class="ticks"><span style="left:0">0</span><span style="left:33.333%">400</span><span style="left:66.666%">800</span><span style="left:100%">1,200</span></div></div>
+      <p class="readout" id="read-outcomes" aria-live="polite">Hover or focus a bar for its share of all reports.</p>
+      <p class="source">Source: NYC Open Data, "311 Service Requests from 2020 to Present" (erm2-nwe9), complaint_type = Obstruction, descriptor = Trash or Recycling, Manhattan CD 2, created 1 Jan–31 Dec 2025. Field: resolution_description. Queried 12 Nov 2026.</p>
+    </div>
+    <div class="notes-col">
+      <div class="note">
+        <h3>What it counts</h3>
+        <p>The resolution text DSNY attached to each of the 1,446 CD 2 trash-obstruction requests in 2025, grouped by exact wording.</p>
+      </div>
+      <div class="note">
+        <h3>What it cannot show</h3>
+        <p>Whether the sidewalk was cleared anyway. "Doesn't meet criteria" may mean bags were set out legally, in the allowed window, not that nothing was there. Outcomes for a bag do not show what the resident or business did next.</p>
+      </div>
+      <div class="note">
+        <h3>Counting choice</h3>
+        <p>Six largest wordings shown as written (shortened); the 27 remaining reports are grouped as "Other outcomes". Ordered by count, not by severity.</p>
+      </div>
+    </div>
+  </div></div>
 </section>
+
+
+
+<!-- ============ 5 · THE TURN ============ -->
+<section class="screen" id="turn" aria-labelledby="h-turn">
+  <div class="frame"><div class="grid">
+    <div class="title-band">
+      <p class="eyebrow">The turn · 5 / 6</p>
+      <h2 id="h-turn">Three of every four reports are closed as not meeting criteria. More complaints are not the fix.</h2>
+      <p class="sub">1,099 of 1,446 reports (76%) were closed as "doesn't meet DSNY criteria". Pick what you would do next.</p>
+    </div>
+    <div class="title-band">
+      <div class="cards" role="group" aria-label="Choose an action">
+        <button type="button" class="card" data-k="311" aria-pressed="false"><h3>File another 311 report</h3><p>The tool we already have.</p></button>
+        <button type="button" class="card" data-k="rule" aria-pressed="false"><h3>Ask for a 7 AM rule</h3><p>Change when bags may be on the sidewalk.</p></button>
+        <button type="button" class="card" data-k="walk" aria-pressed="false"><h3>Grade your own block</h3><p>Check whether my corridor is typical.</p></button>
+      </div>
+      <div class="steps" id="steps" aria-live="polite"><h3>What happens next</h3><p style="margin:0;color:var(--text2)">Choose an option above to see what the data says about it.</p></div>
+      <p class="source" style="max-width:56em">These are suggested actions, not claims that a timing rule would clear the sidewalks. The 7 AM rule is my proposal; the data shows when reports arrive, not whether enforcement would work.</p>
+    </div>
+  </div></div>
+</section>
+
+
+
+<!-- ============ 6 · THE ASK ============ -->
+<section class="screen" id="ask" aria-labelledby="h-ask" style="border-bottom:0">
+  <div class="frame"><div class="grid">
+    <div class="title-band">
+      <p class="eyebrow">The ask · 6 / 6</p>
+      <h2 id="h-ask">Ask for a setout-timing rule enforced at 7 AM.</h2>
+      <p class="sub">Add your block and copy a message to send to your Community Board and DSNY.</p>
+    </div>
+    <div class="chart-col">
+      <div class="askbox">
+        <h3>Sign the setout-time statement</h3>
+        <label for="block">Your block or street</label>
+        <input id="block" type="text" placeholder="e.g. MacDougal St" autocomplete="off">
+        <div class="msg" id="msg"></div>
+        <button class="btn" type="button" id="copy">Copy my message</button>
+        <a class="btn ghost" href="#turn" style="margin-left:8px">← Change my action</a>
+        <p class="status" id="status" role="status"></p>
+      </div>
+    </div>
+    <div class="notes-col">
+      <div class="note">
+        <h3>Prototype note</h3>
+        <p><b>No personal data is collected.</b> What you type stays in your browser. The petition link itself is a placeholder in this version.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+
 
 
 </main>
 
-<footer><div class="frame"><p>Student campaign prototype · Version 1 · PUDM 2700 Information Visualization, Parsons · Source: NYC Open Data 311 Service Requests (erm2-nwe9), 2025; field survey from DR1 Assignment 3.</p></div></footer>
+<footer><div class="frame"><p>Student campaign prototype · Version 2 · PUDM 2700 Information Visualization, Parsons · Source: NYC Open Data 311 Service Requests (erm2-nwe9), 2025; field survey from DR1 Assignment 3.</p></div></footer>
 
 <script>
 document.documentElement.classList.add('js');
